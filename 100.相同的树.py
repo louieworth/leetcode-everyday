@@ -13,19 +13,6 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        # if p and not q:
-        #     return False
-        # if not p and q:
-        #     return False
-        # if not p.val == q.val:
-        #     return False
-        # if not p:
-        #     return
-        # self.isSameTree(p.left, q.left) 
-        # self.isSameTree(p.right, q.right) 
-        # return True
-        if not p and not q: return True   # 这里的right只是当层的right
-        if not p or not q: return False
         '''
         这里可以思考的地方很多：
         1. 如果 p q 都不存在，就直接返回了，如果执行到下一步说明至少p/q存在一个/
@@ -34,7 +21,13 @@ class Solution:
         ----------------------
         return true只是当层的return，并不是fun的return
         '''
-        if p.val != q.val: return False
+        if not (p or q):
+            return True
+        if not (p and q):
+            return False
+        if p.val != q.val:
+            return False
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+    
 # @lc code=end
 
