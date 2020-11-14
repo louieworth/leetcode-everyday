@@ -21,13 +21,12 @@ class Solution:
         ----------------------
         return true只是当层的return，并不是fun的return
         '''
-        if not (p or q):
+        if not p and not q:
             return True
-        if not (p and q):
+        if not p or not q:
             return False
         if p.val != q.val:
             return False
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
-    
 # @lc code=end
 

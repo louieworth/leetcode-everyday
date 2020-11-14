@@ -35,18 +35,15 @@ class Solution:
         deque.append(root)
         while deque:
             cur = []
-            for _ in range(len(deque)): # 避免记录level的数据
+            for _ in range(len(deque)):
                 tmp = deque.popleft()
-                if not tmp:
-                    continue
-                cur.append(tmp.val)
-                deque.append(tmp.left)
-                deque.append(tmp.right)
+                if tmp:
+                    cur.append(tmp.val)
+                    deque.append(tmp.left)
+                    deque.append(tmp.right)
             if cur:
                 res.append(cur)
         return res
-        
-        
 
 '''
 Operations: 双端队列：dq = collection.deque()

@@ -17,6 +17,9 @@
 # continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 # continue语句用在while和for循环中。
 # 逻辑运算中 not > and > or
+# return 的作用是退出循环体所在的函数，相当于结束该方法。
+# break 的作用是结束循环，跳出循环体，执行后面的程序。
+# continue 的作用是结束此次循环，进行下一次循环；
 
 class Solution(object):
     def detectCycle(self, head):
@@ -26,7 +29,7 @@ class Solution(object):
         """
         fast, slow = head, head
         while True:
-            if not (fast and fast.next): return 
+            if not fast or not fast.next: return 
             fast, slow = fast.next.next, slow.next
             if fast == slow: break 
         fast = head
