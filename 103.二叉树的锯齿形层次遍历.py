@@ -15,25 +15,22 @@
 class Solution:
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         res = []
-        queue =[root]
         flag = False
+        queue = [root]
         while queue:
-            next_queue = []
             cur = []
+            next_queue = []
             for node in queue:
-                if not node:
-                    continue
+                if not node: continue
                 cur.append(node.val)
                 next_queue.extend([node.left, node.right])
             if cur:
                 if flag:
                     cur = cur[::-1]
                 res.append(cur)
-            flag = False if flag else True  
-            queue = next_queue
+            flag = False if flag else True
+            queue = next_queue    
         return res
-
-                
 
 # @lc code=end
 
