@@ -12,6 +12,21 @@ Work Hard, For MSRA.~!!!
 
 ## Question I can't figure it out now
 
-11.30  Day 17. [剑指 Offer 37. 序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/)
 
-11.30 Day 18. [987. 二叉树的垂序遍历](https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/)
+
+
+
+|                             Name                             | Completed Date |                  DS                  |
+| :----------------------------------------------------------: | :------------: | :----------------------------------: |
+| [剑指 Offer 37. 序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) |                |                                      |
+| [987. 二叉树的垂序遍历](https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/) |                |                                      |
+| [347. 前 K 个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) |                | Priority Queue, mini heap, Quicksort |
+
+
+
+
+
+# Microsoft
+
+Links: [Github](https://github.com/afatcoder/LeetcodeTop)
+
