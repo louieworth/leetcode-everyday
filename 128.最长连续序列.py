@@ -11,21 +11,36 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        hash_dict = dict()
-        max_length = 0
-        for num in nums:
-            if num not in hash_dict:
-                left = hash_dict.get(num - 1, 0)
-                right = hash_dict.get(num + 1, 0)
-                cur_length = 1 + left + right
-                if cur_length > max_length:
-                    max_length = cur_length
+        max_len = 0
+        nums_set = set(nums)
+        for num in nums_set:
+            if num - 1 not in nums_set:
+                cur_len = 1
+                cur_num = num
+
+                while cur_num + 1 in nums_set:
+                    cur_len += 1
+                    cur_num += 1
                 
-                hash_dict[num] = cur_length
-                hash_dict[num - left] = cur_length
-                hash_dict[num + right] = cur_length
-        return max_length
-        
+                max_len = max(cur_len, max_len)
+        return max_len
+
+
+        # if not nums: return 0
+        # max_len = 0
+        # hashtable = dict()
+        # for i in range(len(nums)):
+        #     if nums[i] not in hashtable:
+        #         left = hashtable.get(nums[i]-1, 0)
+        #         right = hashtable.get(nums[i]+1, 0)
+        #         cur_len = 1 + left + right
+        #         if cur_len > max_len:
+        #             max_len = cur_len
+
+        #         hashtable[nums[i]] = cur_len
+        #         hashtable[nums[i]-left] = cur_len
+        #         hashtable[nums[i]+right] = cur_len
+        # return max_len
         
 # @lc code=end
 

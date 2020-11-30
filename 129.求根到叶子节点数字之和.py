@@ -21,13 +21,15 @@ class Solution(object):
         """
         时间复杂度O(N) 空间复杂度O(N)，主要是看递归站栈的调用次数
         """
-        def helper(node, i):
-            if not node: return 0
-            tmp = 10 * i + node.val
-            if not node.left and not node.right:
-                return tmp 
-            return helper(node.left, tmp) + helper(node.right, tmp)
+        def dfs(root, i):
+            if not root: return 0
+            tmp = 10 * i + root.val
+            if not root.left and not root.right:
+                return tmp
+            
+            return dfs(root.left, tmp) + dfs(root.right, tmp)
 
-        return helper(root, 0)
+
+        return dfs(root, 0)
 # @lc code=end
 
